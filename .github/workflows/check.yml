@@ -13,6 +13,6 @@ jobs:
     steps:
     - name: Check user hello-world repo
       id: check-hello
-      uses: ua-gist-open-source/github-gist604b-actions@v1.0.3
+      uses: ua-gist-open-source/github-gist604b-actions@v1.0.4
       with:
         user: ${{ github.actor }}
