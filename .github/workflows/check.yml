@@ -4,30 +4,18 @@ name: Assignment requirement check
 
 # Controls when the action will run. Triggers the workflow on push or pull request
 # events but only for the master branch
-on: [push, pull_request]
+on: [push]
 
 jobs:
-  build:
+  hello_world_job:
     runs-on: ubuntu-latest
-
+    name: A job to say hello
     steps:
-      - uses: actions/checkout@v2
-
-      - name: Check that the hello-world URL is in the README.md file
-        run: |
-          url=$(grep 'URL of my repository' README.md | sed 's/URL of my repository://' | sed 's/^ *//g')
-          if [ -z "$url" ]; then
-             echo URL should be on same line with \"URL of my repository:\"
-             exit 1
-          fi
-          is_this_repo=$(echo $url | grep github.com/ua-gist-open-source)
-          if [ -z $is_this_repo ]; then
-             echo URL should be for your newly created github repo (not this one)
-             exit 1
-          fi
-          status=$(curl -s -I -L -o /dev/null -w "%{http_code}" $url)
-          ok=$(echo $status | grep ^2)
-          if [ -z $ok ]; then
-             echo URL $url not found: status: $status
-             exit 1
-          fi
+    - name: Hello world action step
+      id: hello
+      uses: ua-gist-open-source/github-gist604b-actions@v1
+      with:
+        who-to-greet: 'Mona the Octocat'
+    # Use the output from the `hello` step
+    - name: Get the output time
+      run: echo "The time was ${{ steps.hello.outputs.time }}"
