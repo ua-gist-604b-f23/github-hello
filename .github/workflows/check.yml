@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
+    - name: Checkout
+      uses: actions/checkout@v2
     - name: Check user hello-world repo
       id: check-hello
       uses: ua-gist-open-source/github-gist604b-actions@v1.0.4
