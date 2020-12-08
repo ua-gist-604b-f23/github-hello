@@ -11,11 +11,8 @@ jobs:
     runs-on: ubuntu-latest
     name: A job to say hello
     steps:
-    - name: Check for repo
-      id: hello
-      uses: ua-gist-open-source/github-gist604b-actions@v1.0
+    - name: Check user hello-world repo
+      id: check-hello
+      uses: ua-gist-open-source/github-gist604b-actions@v1.0.0
       with:
-        who-to-greet: ${{ github.actor }}
-    # Use the output from the `hello` step
-    - name: Get the output time
-      run: echo "The time was ${{ steps.hello.outputs.time }}"
+        user: ${{ github.actor }}
