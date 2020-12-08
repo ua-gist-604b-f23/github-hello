@@ -6,6 +6,6 @@
 1. Follow the directions at https://guides.github.com/activities/hello-world/. When you have completed the activity,
 edit this document and enter the url of your repository below:
 
-URL of my repository: 
+URL of my repository: https://github.com/ua-gist-open-source/github-hello/edit/master/README.md
 
 Be sure to let the instructor know you're done by sending a DM in Slack!
