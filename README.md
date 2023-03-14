@@ -8,4 +8,8 @@ edit this document and enter the url of your repository below:
 
 URL of my repository: 
 
-Be sure to let the instructor know you're done by sending a DM in Slack!
+My Net ID:
+
+My Name:
+
+Be sure to let the instructor know you're done by sending an email to aaryn@arizona.edu
